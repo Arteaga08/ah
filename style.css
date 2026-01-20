@@ -1,0 +1,204 @@
+:root {
+  --text-main: #1f1f1f; /* Negro editorial (no puro) */
+  --text-soft: #3a3a3a; /* Gris elegante para secundarios */
+  --text-muted: #6b6b6b;
+  --accent-soft: #c6b8a6; 
+  --white-soft: #faf9f7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Playfair Display", sans-serif;
+  background-color: var(--pink-logo-light);
+  min-height: 100dvh;
+}
+
+/* ===============================
+   HERO
+================================ */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background-image: url("./img/adrina1.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}
+
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================ */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+  width: 90%;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ===============================
+   BLOQUE SUPERIOR
+================================ */
+.top-block {
+  text-align: center;
+  margin-top: 8vh;
+}
+
+.logo {
+  font-size: clamp(2.6em, 9vw, 3.5em);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.sub-heading {
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  font-weight: bold;
+  font-size: 0.75em;
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6px 16px;
+  border-radius: 50px;
+  backdrop-filter: blur(4px);
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #26f497; /* verde activo pero elegante */
+  border-radius: 50%;
+  margin-right: 8px;
+
+  /* Glow sutil para que se note que está online */
+  box-shadow:
+    0 0 6px rgba(62, 207, 142, 0.8),
+    0 0 12px rgba(62, 207, 142, 0.4);
+}
+
+/* ===============================
+   BLOQUE INFERIOR
+================================ */
+.center-block {
+  width: 100%;
+  margin-bottom: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.find-me-text {
+  font-size: 0.75em;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.social-icons {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.social-icons a {
+  font-size: 2.3em;
+  color: var(--text-main);
+}
+
+.action-buttons {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1.2px solid rgba(158, 27, 27, 0.35);
+  border-radius: 14px; /* 🔑 clave */
+}
+
+.action-button:hover {
+  border-color: rgba(158, 27, 27, 0.6);
+}
+
+.btn {
+  padding: 15px 20px;
+  font-size: 0.95em;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  border: 1.5px solid var(--red-logo-dark);
+  border-color: var(--text-main);
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(5px);
+}
+
+.btn:hover {
+  background-color: var(--text-main);
+  color: var(--white-soft);
+}
+
+/* ===============================
+   MÓVIL
+================================ */
+@media (max-width: 480px) {
+  /* 1. BAJAR EL LOGO */
+  .top-block {
+    margin-top: 80px !important;
+  }
+
+  .logo {
+    font-size: 2.8em;
+    margin-bottom: -40px !important; /* 🔧 antes -100 */
+    display: block;
+  }
+
+  /* 2. SUBIR K-BEAUTY Y ONLINE */
+  .sub-heading {
+    margin-top: 80px !important; /* 🔧 px corregido */
+    font-size: 1.2em;
+    letter-spacing: 3px;
+  }
+
+  .status-indicator {
+    margin-top: 10px !important;
+  }
+
+  /* 3. BAJAR REDES SIN ROMPER VIEWPORT */
+  .center-block {
+    margin-top: 350px !important; /* 🔧 sin negativo */
+  }
+}
