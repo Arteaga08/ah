@@ -2,7 +2,7 @@
   --text-main: #1f1f1f; /* Negro editorial (no puro) */
   --text-soft: #3a3a3a; /* Gris elegante para secundarios */
   --text-muted: #6b6b6b;
-  --accent-soft: #c6b8a6; 
+  --accent-soft: #c6b8a6;
   --white-soft: #faf9f7;
 }
 
@@ -130,6 +130,8 @@ body {
 
 .social-icons {
   display: flex;
+  justify-content: center; /* 👈 clave */
+  align-items: center; /* 👈 estabilidad vertical */
   gap: 28px;
   margin-bottom: 24px;
 }
